@@ -17,8 +17,8 @@ const services = [
         title: "Civil Law & Disputes",
         description: "Debt issues, broken agreements, contract disputes, and civil conflicts of all shapes and sizes. If it turns into a dispute Saul helps you keep it under control.",
         gridClass: "md:col-span-1 md:row-span-2",
-        colorClass: "bg-red-700 text-white",
-        iconWrapperClass: "bg-white text-navy-dark",
+        colorClass: "bg-gradient-to-br from-red-600 to-red-800 text-white",
+        iconWrapperClass: "bg-white text-red-700",
         descriptionClass: "text-white/90",
     },
     {
@@ -30,8 +30,8 @@ const services = [
         title: "Family Law",
         description: "Marriage, divorce, custody, support, and prenuptial agreements. Real-life family problems need real-world legal clarity not chaos.",
         gridClass: "md:col-span-2",
-        colorClass: "bg-red-700 text-white",
-        iconWrapperClass: "bg-white text-navy-dark",
+        colorClass: "bg-gradient-to-br from-red-600 to-red-800 text-white",
+        iconWrapperClass: "bg-white text-red-700",
         descriptionClass: "text-white/90",
     },
     {
@@ -41,8 +41,8 @@ const services = [
         title: "Business & Corporate Law",
         description: "Partnership agreements, business contracts, company legality, MoUs, and due diligence. From boardrooms to back-office deals Saul makes the fine print make sense.",
         gridClass: "md:col-span-1",
-        colorClass: "bg-black text-white",
-        iconWrapperClass: "bg-white text-navy-dark border-2 border-navy-dark",
+        colorClass: "bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white",
+        iconWrapperClass: "bg-white text-gray-900",
         descriptionClass: "text-white/90",
     },
     {
@@ -52,8 +52,8 @@ const services = [
         title: "Employment Law",
         description: "Termination issues, workplace disputes, employment contracts, and employee rights. When work gets complicated, Saul helps you understand where you stand.",
         gridClass: "md:col-span-1",
-        colorClass: "bg-gradient-to-r from-yellow-400 to-yellow-600 text-white",
-        iconWrapperClass: "bg-white text-navy-dark",
+        colorClass: "bg-gradient-to-br from-yellow-500 to-amber-600 text-white",
+        iconWrapperClass: "bg-white text-amber-600",
         descriptionClass: "text-white",
     },
     {
@@ -63,8 +63,8 @@ const services = [
         title: "Contract Review & Drafting",
         description: "Lease agreements, sales contracts, partnership deals, and more. Saul makes sure what you sign protects you not traps you.",
         gridClass: "md:col-span-2",
-        colorClass: "bg-gradient-to-r from-yellow-400 to-yellow-600 text-white",
-        iconWrapperClass: "bg-white text-navy-dark",
+        colorClass: "bg-gradient-to-br from-yellow-500 to-amber-600 text-white",
+        iconWrapperClass: "bg-white text-amber-600",
         descriptionClass: "text-white",
     },
     {
@@ -74,11 +74,12 @@ const services = [
         title: "Preventive Legal Consultation",
         description: "Check the risks before you make a big decision. A quick talk now can save you a whole lot of trouble later.",
         gridClass: "md:col-span-1",
-        colorClass: "bg-gradient-to-r from-yellow-400 to-yellow-600 text-white",
-        iconWrapperClass: "bg-white text-navy-dark",
+        colorClass: "bg-gradient-to-br from-yellow-500 to-amber-600 text-white",
+        iconWrapperClass: "bg-white text-amber-600",
         descriptionClass: "text-white",
     },
 ];
+
 
 export function Services() {
     const scrollRef = useRef<HTMLDivElement>(null);

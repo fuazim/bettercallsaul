@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -9,8 +9,7 @@ import { Button } from "@/components/ui/button";
 const navItems = [
     { label: "About", href: "#tentang" },
     { label: "Services", href: "#layanan" },
-    { label: "Packages", href: "#paket" },
-    { label: "Process", href: "#proses" },
+    { label: "Packages", href: "#packages" },
     { label: "Testimonials", href: "#testimoni" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#kontak" },
@@ -28,11 +27,33 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleMobileNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        setIsMobileMenuOpen(false);
+
+        const targetId = href.replace("#", "");
+
+        // Small timeout to ensure menu close animation starts/doesn't block scroll
+        setTimeout(() => {
+            const element = document.getElementById(targetId);
+            if (element) {
+                const offset = 60;
+                const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }, 300);
+    };
+
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-gray-900 backdrop-blur-md shadow-lg border-b border-gray-800"
-                    : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
+                ? "bg-gray-900 backdrop-blur-md shadow-lg border-gray-800"
+                : "bg-transparent border-transparent"
                 }`}
         >
             <div className="container-custom">
@@ -120,7 +141,7 @@ export function Navbar() {
                                 <a
                                     key={item.href}
                                     href={item.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    onClick={(e) => handleMobileNavClick(e, item.href)}
                                     className="block text-white hover:text-gold transition-colors py-2"
                                 >
                                     {item.label}
