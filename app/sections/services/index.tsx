@@ -136,7 +136,7 @@ export function Services() {
     };
 
     return (
-        <section id="layanan" className="section-padding bg-white relative overflow-hidden">
+        <section id="services" className="bg-white text-navy-dark section-padding">
             {/* Background Image - Stick to Left */}
             <div className="absolute left-0 bottom-0 top-0 w-full md:w-1/3 lg:w-1/4 z-0 pointer-events-none select-none">
                 <Image

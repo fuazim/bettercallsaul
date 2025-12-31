@@ -143,17 +143,8 @@ export function Packages() {
     };
 
     return (
-        <section id="packages" className="section-padding bg-gray-900 relative overflow-hidden">
-            {/* Background Image Right Bottom */}
-            <div className="absolute right-0 bottom-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] z-30 pointer-events-none select-none">
-                <Image
-                    src="/images/saul-packages.png"
-                    alt="Saul Packages"
-                    fill
-                    className="object-contain object-bottom right-0"
-                    unoptimized
-                />
-            </div>
+        <section id="packages" className="section-padding bg-gradient-to-br from-black to-zinc-900 relative overflow-hidden">
+
             <div className="container-custom">
                 <MotionWrapper>
                     <div className="mb-20 md:mb-32 text-center">

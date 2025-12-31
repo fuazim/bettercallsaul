@@ -92,7 +92,7 @@ export function Configurator() {
     };
 
     return (
-        <section id="konfigurator" className="section-padding bg-gradient-navy">
+        <section id="configurator" className="section-padding bg-light relative scroll-mt-20">
             <div className="container-custom">
                 <MotionWrapper>
                     <SectionHeader
@@ -115,10 +115,10 @@ export function Configurator() {
                                                 <button
                                                     onClick={() => step < currentStep && setCurrentStep(step)}
                                                     className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${step === currentStep
-                                                            ? "bg-gold text-navy-dark"
-                                                            : step < currentStep
-                                                                ? "bg-primary text-primary-foreground cursor-pointer"
-                                                                : "bg-muted text-muted-foreground"
+                                                        ? "bg-gold text-navy-dark"
+                                                        : step < currentStep
+                                                            ? "bg-primary text-primary-foreground cursor-pointer"
+                                                            : "bg-muted text-muted-foreground"
                                                         }`}
                                                 >
                                                     {step < currentStep ? (

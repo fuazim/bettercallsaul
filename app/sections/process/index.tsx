@@ -134,14 +134,14 @@ export function Process() {
                         ))}
                     </div>
 
-                    <div className="bg-gray-50 border-2 border-gray-100 p-6 md:p-10 shadow-xl rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-none rounded-bl-none relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gray-800 p-6 md:p-10 shadow-xl rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-none rounded-bl-none relative overflow-hidden text-white">
                         {/* Decorative Corner Accent */}
                         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gold/20 to-transparent pointer-events-none" />
 
                         {/* STEP 1 */}
                         {currentStep === 1 && (
                             <MotionWrapper>
-                                <h3 className="text-2xl font-bold text-navy-dark mb-6 flex items-center gap-2">
+                                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                     <span className="text-gold">STEP 1</span> — SELECT A CONSULTATION PACKAGE
                                 </h3>
                                 <div className="grid gap-4">
@@ -152,17 +152,17 @@ export function Process() {
                                             className={cn(
                                                 "cursor-pointer p-6 border-2 transition-all hover:scale-[1.01] rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none group",
                                                 formData.package === pkg.name
-                                                    ? "border-gold bg-white shadow-md"
-                                                    : "border-gray-200 bg-white hover:border-gold/50"
+                                                    ? "border-gold bg-white/10 shadow-md"
+                                                    : "border-white/10 bg-white/5 hover:border-gold/50"
                                             )}
                                         >
                                             <div className="flex justify-between items-start mb-2">
-                                                <h4 className="font-bold text-lg text-navy-dark group-hover:text-gold transition-colors">{pkg.name}</h4>
+                                                <h4 className="font-bold text-lg text-white group-hover:text-gold transition-colors">{pkg.name}</h4>
                                                 {formData.package === pkg.name && <Check className="text-gold" />}
                                             </div>
-                                            <div className="text-sm font-bold text-gray-500 mb-1">{pkg.duration}</div>
-                                            <div className="text-lg font-bold text-navy-dark mb-2">{pkg.price}</div>
-                                            <p className="text-gray-600 text-sm">{pkg.description}</p>
+                                            <div className="text-sm font-bold text-gray-400 mb-1">{pkg.duration}</div>
+                                            <div className="text-lg font-bold text-white mb-2">{pkg.price}</div>
+                                            <p className="text-gray-300 text-sm">{pkg.description}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -177,20 +177,20 @@ export function Process() {
                         {/* STEP 2 */}
                         {currentStep === 2 && (
                             <MotionWrapper>
-                                <h3 className="text-2xl font-bold text-navy-dark mb-6 flex items-center gap-2">
+                                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                     <span className="text-gold">STEP 2</span> — SELECT LEGAL AREA
                                 </h3>
-                                <p className="text-gray-600 mb-6 font-medium">Which Legal Area Do You Need Help With?</p>
+                                <p className="text-gray-300 mb-6 font-medium">Which Legal Area Do You Need Help With?</p>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {legalAreas.map((area) => (
                                         <div
                                             key={area}
                                             onClick={() => updateData("legalArea", area)}
                                             className={cn(
-                                                "cursor-pointer p-4 border-2 transition-all font-bold text-navy-dark rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none flex items-center gap-3",
+                                                "cursor-pointer p-4 border-2 transition-all font-bold text-white rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none flex items-center gap-3",
                                                 formData.legalArea === area
-                                                    ? "border-gold bg-gold/10"
-                                                    : "border-gray-200 bg-white hover:border-gold"
+                                                    ? "border-gold bg-gold/20"
+                                                    : "border-white/10 bg-white/5 hover:border-gold"
                                             )}
                                         >
                                             <div className={cn(
@@ -205,17 +205,17 @@ export function Process() {
                                 </div>
                                 {formData.legalArea === "Other" && (
                                     <div className="mt-4">
-                                        <Label htmlFor="other" className="text-navy-dark font-bold">Please describe</Label>
+                                        <Label htmlFor="other" className="text-white font-bold">Please describe</Label>
                                         <Input
                                             id="other"
                                             value={formData.otherLegalArea}
                                             onChange={(e) => updateData("otherLegalArea", e.target.value)}
-                                            className="mt-2 border-gray-300 focus:border-gold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none"
+                                            className="mt-2 border-gray-700 bg-white/5 text-white focus:border-gold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none"
                                         />
                                     </div>
                                 )}
                                 <div className="mt-8 flex justify-between">
-                                    <Button variant="ghost" onClick={handleBack} className="text-gray-500 hover:text-navy-dark">Back</Button>
+                                    <Button variant="ghost" onClick={handleBack} className="text-gray-400 hover:text-white">Back</Button>
                                     <Button onClick={handleNext} disabled={!formData.legalArea} className="bg-gold text-navy-dark hover:bg-yellow-500 font-bold px-8 h-12 text-lg rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none">
                                         Continue <ChevronRight className="ml-2 w-5 h-5" />
                                     </Button>
@@ -226,23 +226,23 @@ export function Process() {
                         {/* STEP 3 */}
                         {currentStep === 3 && (
                             <MotionWrapper>
-                                <h3 className="text-2xl font-bold text-navy-dark mb-6 flex items-center gap-2">
+                                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                     <span className="text-gold">STEP 3</span> — TELL US ABOUT YOUR CASE
                                 </h3>
 
                                 <div className="space-y-6">
                                     <div>
-                                        <Label className="text-lg font-bold text-navy-dark mb-2 block">Briefly Explain Your Situation</Label>
+                                        <Label className="text-lg font-bold text-white mb-2 block">Briefly Explain Your Situation</Label>
                                         <Textarea
                                             placeholder="Case Summary..."
-                                            className="min-h-[120px] border-gray-300 focus:border-gold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none text-base"
+                                            className="min-h-[120px] border-gray-700 bg-white/5 text-white focus:border-gold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none text-base"
                                             value={formData.caseSummary}
                                             onChange={(e) => updateData("caseSummary", e.target.value)}
                                         />
                                     </div>
 
                                     <div>
-                                        <Label className="text-lg font-bold text-navy-dark mb-3 block">Do you have supporting documents?</Label>
+                                        <Label className="text-lg font-bold text-white mb-3 block">Do you have supporting documents?</Label>
                                         <div className="flex gap-4">
                                             {["Yes", "No"].map((opt) => (
                                                 <div
@@ -251,8 +251,8 @@ export function Process() {
                                                     className={cn(
                                                         "cursor-pointer px-6 py-3 border-2 font-bold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none min-w-[100px] text-center transition-all",
                                                         formData.hasDocuments === opt
-                                                            ? "bg-navy-dark text-white border-navy-dark"
-                                                            : "bg-white text-gray-500 border-gray-200 hover:border-navy-dark"
+                                                            ? "bg-gold text-navy-dark border-gold"
+                                                            : "bg-white/5 text-gray-400 border-white/10 hover:border-gold"
                                                     )}
                                                 >
                                                     {opt}
@@ -262,7 +262,7 @@ export function Process() {
                                     </div>
 
                                     <div>
-                                        <Label className="text-lg font-bold text-navy-dark mb-3 block">Urgency Level</Label>
+                                        <Label className="text-lg font-bold text-white mb-3 block">Urgency Level</Label>
                                         <div className="grid md:grid-cols-3 gap-3">
                                             {urgencyLevels.map((lvl) => (
                                                 <div
@@ -272,7 +272,7 @@ export function Process() {
                                                         "cursor-pointer px-4 py-3 border-2 font-bold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none text-center transition-all text-sm",
                                                         formData.urgency === lvl
                                                             ? "bg-gold text-navy-dark border-gold"
-                                                            : "bg-white text-gray-500 border-gray-200 hover:border-gold"
+                                                            : "bg-white/5 text-gray-400 border-white/10 hover:border-gold"
                                                     )}
                                                 >
                                                     {lvl}
@@ -283,7 +283,7 @@ export function Process() {
                                 </div>
 
                                 <div className="mt-8 flex justify-between">
-                                    <Button variant="ghost" onClick={handleBack} className="text-gray-500 hover:text-navy-dark">Back</Button>
+                                    <Button variant="ghost" onClick={handleBack} className="text-gray-400 hover:text-white">Back</Button>
                                     <Button onClick={handleNext} disabled={!formData.caseSummary || !formData.hasDocuments || !formData.urgency} className="bg-gold text-navy-dark hover:bg-yellow-500 font-bold px-8 h-12 text-lg rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none">
                                         Continue <ChevronRight className="ml-2 w-5 h-5" />
                                     </Button>
@@ -294,29 +294,29 @@ export function Process() {
                         {/* STEP 4 */}
                         {currentStep === 4 && (
                             <MotionWrapper>
-                                <h3 className="text-2xl font-bold text-navy-dark mb-6 flex items-center gap-2">
+                                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                     <span className="text-gold">STEP 4</span> — CONTACT DETAILS
                                 </h3>
-                                <p className="text-gray-600 mb-6 font-medium">How Can We Reach You?</p>
+                                <p className="text-gray-300 mb-6 font-medium">How Can We Reach You?</p>
 
                                 <div className="space-y-4">
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
-                                            <Label htmlFor="name" className="font-bold text-navy-dark">Full Name</Label>
-                                            <Input id="name" value={formData.fullName} onChange={(e) => updateData("fullName", e.target.value)} className="border-gray-300 focus:border-gold h-12 rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none" />
+                                            <Label htmlFor="name" className="font-bold text-white">Full Name</Label>
+                                            <Input id="name" value={formData.fullName} onChange={(e) => updateData("fullName", e.target.value)} className="border-gray-700 bg-white/5 text-white focus:border-gold h-12 rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none" />
                                         </div>
                                         <div className="space-y-2">
-                                            <Label htmlFor="email" className="font-bold text-navy-dark">Email</Label>
-                                            <Input id="email" type="email" value={formData.email} onChange={(e) => updateData("email", e.target.value)} className="border-gray-300 focus:border-gold h-12 rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none" />
+                                            <Label htmlFor="email" className="font-bold text-white">Email</Label>
+                                            <Input id="email" type="email" value={formData.email} onChange={(e) => updateData("email", e.target.value)} className="border-gray-700 bg-white/5 text-white focus:border-gold h-12 rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="whatsapp" className="font-bold text-navy-dark">WhatsApp Number</Label>
-                                        <Input id="whatsapp" value={formData.whatsapp} onChange={(e) => updateData("whatsapp", e.target.value)} className="border-gray-300 focus:border-gold h-12 rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none" />
+                                        <Label htmlFor="whatsapp" className="font-bold text-white">WhatsApp Number</Label>
+                                        <Input id="whatsapp" value={formData.whatsapp} onChange={(e) => updateData("whatsapp", e.target.value)} className="border-gray-700 bg-white/5 text-white focus:border-gold h-12 rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none" />
                                     </div>
 
                                     <div className="space-y-2 pt-2">
-                                        <Label className="font-bold text-navy-dark block mb-2">Preferred Consultation Method</Label>
+                                        <Label className="font-bold text-white block mb-2">Preferred Consultation Method</Label>
                                         <div className="flex flex-wrap gap-3">
                                             {["Chat", "Voice Call", "Video Call"].map((method) => (
                                                 <div
@@ -325,8 +325,8 @@ export function Process() {
                                                     className={cn(
                                                         "cursor-pointer px-5 py-2 border-2 font-bold rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none transition-all text-sm",
                                                         formData.consultationMethod === method
-                                                            ? "bg-navy-dark text-white border-navy-dark"
-                                                            : "bg-white text-gray-500 border-gray-200 hover:border-navy-dark"
+                                                            ? "bg-gold text-navy-dark border-gold"
+                                                            : "bg-white/5 text-gray-400 border-white/10 hover:border-gold"
                                                     )}
                                                 >
                                                     {method}
@@ -337,7 +337,7 @@ export function Process() {
                                 </div>
 
                                 <div className="mt-8 flex justify-between">
-                                    <Button variant="ghost" onClick={handleBack} className="text-gray-500 hover:text-navy-dark">Back</Button>
+                                    <Button variant="ghost" onClick={handleBack} className="text-gray-400 hover:text-white">Back</Button>
                                     <Button onClick={handleNext} disabled={!formData.fullName || !formData.email || !formData.whatsapp || !formData.consultationMethod} className="bg-gold text-navy-dark hover:bg-yellow-500 font-bold w-full md:w-auto px-8 h-12 text-lg rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none shadow-lg">
                                         Submit Consultation Request
                                     </Button>
@@ -352,35 +352,35 @@ export function Process() {
                                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
                                         <Check size={32} strokeWidth={3} />
                                     </div>
-                                    <h3 className="text-3xl font-bold text-navy-dark mb-2">YOUR REQUEST SUMMARY</h3>
-                                    <p className="text-gray-500">Thank you. We have received your details.</p>
+                                    <h3 className="text-3xl font-bold text-white mb-2">YOUR REQUEST SUMMARY</h3>
+                                    <p className="text-gray-400">Thank you. We have received your details.</p>
                                 </div>
 
-                                <div className="bg-white border-2 border-dashed border-gray-300 p-6 rounded-tl-[2rem] rounded-br-[2rem] mb-8 space-y-4">
-                                    <div className="flex justify-between border-b border-gray-100 pb-2">
-                                        <span className="text-gray-500 font-medium">Package</span>
-                                        <span className="text-navy-dark font-bold text-right">{formData.package}</span>
+                                <div className="bg-white/5 border-2 border-dashed border-gray-700 p-6 rounded-tl-[2rem] rounded-br-[2rem] mb-8 space-y-4">
+                                    <div className="flex justify-between border-b border-gray-700 pb-2">
+                                        <span className="text-gray-400 font-medium">Package</span>
+                                        <span className="text-white font-bold text-right">{formData.package}</span>
                                     </div>
-                                    <div className="flex justify-between border-b border-gray-100 pb-2">
-                                        <span className="text-gray-500 font-medium">Legal Area</span>
-                                        <span className="text-navy-dark font-bold text-right">{formData.legalArea === "Other" ? formData.otherLegalArea : formData.legalArea}</span>
+                                    <div className="flex justify-between border-b border-gray-700 pb-2">
+                                        <span className="text-gray-400 font-medium">Legal Area</span>
+                                        <span className="text-white font-bold text-right">{formData.legalArea === "Other" ? formData.otherLegalArea : formData.legalArea}</span>
                                     </div>
-                                    <div className="flex justify-between border-b border-gray-100 pb-2">
-                                        <span className="text-gray-500 font-medium">Urgency Level</span>
-                                        <span className="text-navy-dark font-bold text-right">{formData.urgency}</span>
+                                    <div className="flex justify-between border-b border-gray-700 pb-2">
+                                        <span className="text-gray-400 font-medium">Urgency Level</span>
+                                        <span className="text-white font-bold text-right">{formData.urgency}</span>
                                     </div>
                                     <div className="flex justify-between pt-2">
-                                        <span className="text-gray-500 font-medium">Estimated Cost</span>
+                                        <span className="text-gray-400 font-medium">Estimated Cost</span>
                                         <span className="text-gold font-bold text-xl text-right">
                                             {packages.find(p => p.name === formData.package)?.price.split(' ')[0]} USD
                                         </span>
                                     </div>
                                 </div>
 
-                                <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8 rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none">
+                                <div className="bg-amber-900/20 border-l-4 border-amber-500 p-4 mb-8 rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none">
                                     <div className="flex items-start gap-3">
-                                        <AlertCircle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                                        <p className="text-sm text-amber-800 font-medium">
+                                        <AlertCircle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                                        <p className="text-sm text-amber-200 font-medium">
                                             Final cost may vary depending on the complexity of your case. We will confirm details after reviewing your request.
                                         </p>
                                     </div>
@@ -392,12 +392,12 @@ export function Process() {
                                         Consult via WhatsApp
                                     </Button>
 
-                                    <div className="md:flex items-center justify-center gap-2 text-gray-500 text-sm mt-6">
+                                    <div className="md:flex items-center justify-center gap-2 text-gray-400 text-sm mt-6">
                                         <ShieldAlert className="w-4 h-4 inline md:block" />
                                         <span>Your information is confidential. Tell Saul what happened. He will guide you from there.</span>
                                     </div>
 
-                                    <p className="text-navy-dark/60 font-serif italic mt-8 text-lg">
+                                    <p className="text-white/60 font-serif italic mt-8 text-lg">
                                         "If it sounds like trouble, better tell Saul."
                                     </p>
                                 </div>

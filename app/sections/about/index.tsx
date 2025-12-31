@@ -6,7 +6,7 @@ import { SectionHeader } from "@/app/components/section-header";
 
 export function About() {
     return (
-        <section id="tentang" className="section-padding bg-red-700">
+        <section id="about" className="section-padding bg-gradient-to-br from-red-600 to-red-800 relative overflow-hidden">
             <div className="container-custom">
                 <MotionWrapper>
                     <SectionHeader

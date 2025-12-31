@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Oswald, Roboto } from "next/font/google"; // Import Oswald for rebel/bold look
 import "./globals.css";
+import { ScrollToTop } from "@/app/components/scroll-to-top";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,6 +44,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${oswald.variable} ${roboto.variable} font-sans antialiased`}>
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

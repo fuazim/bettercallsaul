@@ -56,7 +56,7 @@ export function Hero() {
                                     size="lg"
                                     className="bbh-hegarty-regular uppercase font-black bg-gold text-navy-dark hover:bg-yellow-400 px-10 h-14 text-lg md:text-xl tracking-wider transform hover:scale-105 transition-all rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none"
                                 >
-                                    <a href="#konfigurator">Message Saul</a>
+                                    <a href="#configurator">Message Saul</a>
                                 </Button>
                             </div>
                         </MotionWrapper>

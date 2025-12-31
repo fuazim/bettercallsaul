@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button";
 
 // Translated Nav Items
 const navItems = [
-    { label: "About", href: "#tentang" },
-    { label: "Services", href: "#layanan" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
     { label: "Packages", href: "#packages" },
-    { label: "Testimonials", href: "#testimoni" },
+    { label: "Testimonials", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#kontak" },
+    { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -91,7 +91,7 @@ export function Navbar() {
                             // Scaled down slightly for Navbar (h-12 vs h-14, text-md vs text-xl) but kept style
                             className="bbh-hegarty-regular uppercase font-black bg-gold text-navy-dark hover:bg-yellow-400 px-6 h-12 text-md tracking-wider transform hover:scale-105 transition-all rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none shadow-lg shadow-gold/10"
                         >
-                            <a href="#konfigurator">Book Consultation</a>
+                            <a href="#configurator">Book Consultation</a>
                         </Button>
                     </div>
 
@@ -149,7 +149,7 @@ export function Navbar() {
                             ))}
                             {/* Mobile Menu Button Style Updated */}
                             <Button asChild className="w-full mt-4 bg-gold text-navy-dark bbh-hegarty-regular uppercase font-black tracking-wider rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none">
-                                <a href="#konfigurator">Book Consultation</a>
+                                <a href="#configurator">Book Consultation</a>
                             </Button>
                         </div>
                     </motion.div>
